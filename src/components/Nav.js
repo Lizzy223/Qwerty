@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { NavLink } from "react-router-dom"
 const Nav = () => {
   return (
     <header className="header-area header-sticky">
@@ -8,14 +8,16 @@ const Nav = () => {
                 <div className="col-12">
                     <nav className="main-nav">
                         {/* <!-- ***** Logo Start ***** --> */}
-                        <a href="index.html" className="logo">Qwerty<em> INC</em></a>
+                        <NavLink to="index.html" className="logo">Qwerty<em> INC</em></NavLink>
                         {/* <!-- ***** Logo End ***** --> */}
                         {/* <!-- ***** Menu Start ***** --> */}
                         <ul className="nav">
-                            <li><a href="index.html" className="active">Home</a></li>
-                            <li><a href="jobs.html">Jobs</a></li>
-                            <li><a href="jobs.html">About</a></li>                            
-                            <li><a href="contact.html">Contact</a></li> 
+                            <li><NavLink to="/" className="active">Home</NavLink></li>                           
+                            <li><NavLink to="about">About</NavLink></li> 
+                            <li><NavLink to="jobs">Jobs</NavLink></li>                           
+                            <li><NavLink to="contact">Contact</NavLink></li> 
+                            <li><NavLink to="login">Login</NavLink></li> 
+                            <li><NavLink to="register">Register</NavLink></li> 
                         </ul>        
                         <a href='.' className='menu-trigger'>
                             <span>Menu</span>
