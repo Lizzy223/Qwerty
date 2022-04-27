@@ -13,11 +13,11 @@ const Nav = () => {
                         {/* <!-- ***** Menu Start ***** --> */}
                         <ul className="nav">
                             <li><NavLink to="/" className="active">Home</NavLink></li>                           
-                            <li><NavLink to="about">About</NavLink></li> 
-                            <li><NavLink to="jobs">Jobs</NavLink></li>                           
-                            <li><NavLink to="contact">Contact</NavLink></li> 
-                            <li><NavLink to="login">Login</NavLink></li> 
-                            <li><NavLink to="register">Register</NavLink></li> 
+                            <li><NavLink to="/about">About</NavLink></li> 
+                            <li><NavLink to="/jobs">Jobs</NavLink></li>                           
+                            <li><NavLink to="/contact">Contact</NavLink></li> 
+                            <li><NavLink to="/login">Login</NavLink></li> 
+                            <li><NavLink to="/register">Register</NavLink></li> 
                         </ul>        
                         <a href='.' className='menu-trigger'>
                             <span>Menu</span>
