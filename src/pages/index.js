@@ -5,6 +5,7 @@ import React from 'react'
 import Nav from './../components/Nav';
 import Card from './../components/Card'
 import Cta from './../components/Cta'
+import Job from './../components/Job'
 import Footer from './../components/Footer'
 //import img from '../assets/images/about-fullscreen-1-1920x700.jpg'
 import img1 from "../assets/images/line-dec.png"
@@ -30,6 +31,9 @@ const Index = () => {
                     </div>
                 </div>
         </div>
+        {/* Job update */}
+
+        <Job/>
 
         {/* section */}
         <section className="section" id="trainers">
