@@ -1,4 +1,4 @@
-import Nav from './../components/Nav'
+//import Nav from './../components/Nav'
   import Footer from './../components/Footer';
 
   import {
@@ -15,7 +15,7 @@ import Nav from './../components/Nav'
   export default function ResetPassword(){
     return (
     <>
-        <Nav/>
+        {/* <Nav/> */}
       <Flex
         minH={'100vh'}
         align={'center'}

@@ -1,13 +1,50 @@
 import React from 'react'
-import Nav from './../components/Nav';
+
 import Footer from './../components/Footer'
-import Job from './../components/Job'
+import JobLists from './../components/JobList'
+import{ Stack, InputGroup, InputLeftElement, Input, Flex } from '@chakra-ui/react'
+// import icon1 from '../assets/images/icon1.svg'
+// import icon2 from '../assets/images/icon2.svg'
+//import icon3 from '../assets/images/icon3.svg'
+import {GoLocation, GoSearch } from 'react-icons/go'
 
 const Jobs = () => {
   return (
     <div>
-        <Nav/>
-        <Job/>
+        
+        <Stack direction={['column', 'row']} mt={'3rem'} p={'1.5rem'} >
+          <Flex flex={1} align={'center'} justify={'center'}>
+            <InputGroup>
+              <InputLeftElement
+                pointerEvents='none'
+                
+                children={GoSearch}
+              />
+              <Input placeholder='search' />
+            </InputGroup>
+          </Flex>
+          <Flex flex={1} align={'center'} justify={'center'}>
+            <InputGroup>
+              <InputLeftElement
+                pointerEvents='none'
+                
+                children={GoLocation}
+              />
+              <Input placeholder='state' />
+            </InputGroup>
+          </Flex>
+          <Flex flex={1} align={'center'} justify={'center'}>
+            <InputGroup>
+              <InputLeftElement
+                pointerEvents='none'
+                
+                children={GoSearch}
+              />
+              <Input placeholder='Enter amount' />
+            </InputGroup>
+          </Flex>
+        </Stack>
+        <JobLists/>
         <Footer/>
     </div>
   )

@@ -8,14 +8,14 @@ import {
     Text,
     useColorModeValue,
   } from '@chakra-ui/react';
-  import Nav from './../components/Nav'
+  //import Nav from './../components/Nav'
   import Footer from './../components/Footer';
 
   
   export default function ForgotPassword() {
     return (
     <>
-        <Nav/>
+        {/* <Nav/> */}
       <Flex
         minH={'100vh'}
         align={'center'}

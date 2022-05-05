@@ -2,21 +2,76 @@
 // eslint-disable-next-line 
 
 import React from 'react'
-import Nav from './../components/Nav';
+import {
+    Button,
+    Flex,
+    Heading,
+    Image,
+    Stack,
+    Text,
+    useBreakpointValue,
+  } from '@chakra-ui/react';
+  
 import Card from './../components/Card'
 import Cta from './../components/Cta'
 import Job from './../components/Job'
 import Footer from './../components/Footer'
 //import img from '../assets/images/about-fullscreen-1-1920x700.jpg'
 import img1 from "../assets/images/line-dec.png"
-import img2 from "../assets/images/video.mp4"
+//import Carousel from './../components/Carousel'
+import img from '../assets/images/img3.svg'
+import { Link } from 'react-router-dom'
 
 
 const Index = () => {
   return (
     <div>
-        <Nav/>
-        <div className="main-banner" id="top">
+        <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+        <Flex p={2} flex={1} align={'center'} justify={'center'}>
+          <Stack spacing={3} w={'full'} maxW={'lg'}>
+            <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+              <Text
+                as={'span'}
+                position={'relative'}
+                _after={{
+                  content: "''",
+                  width: 'full',
+                  height: useBreakpointValue({ base: '20%', md: '30%' }),
+                  position: 'absolute',
+                  bottom: 1,
+                  left: 0,
+                  bg: 'green',
+                  zIndex: -1,
+                }}>
+                Find the 
+              </Text>
+              <br />{' '}
+              <Text color={'green'} as={'span'}>
+                Perfect Job
+              </Text>{' '}
+            </Heading>
+            <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
+              The job board is an exclusively for fresh graduates and job seekers. We give interview tips and CV review to ensure you get that dream job.
+            </Text>
+            <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
+              <Button
+                rounded={'full'}
+                bg={'green'}
+                color={'white'}
+                _hover={{
+                  bg: 'green.500',
+                }}>
+                <Link to='/login'>Get Started</Link>
+              </Button>
+              <Button rounded={'full'}>How It Works</Button>
+            </Stack>
+          </Stack>
+        </Flex>
+        <Flex flex={1}>
+          <Image src={img} alt='' layout='full' />
+        </Flex>
+      </Stack>
+        {/* <div className="main-banner" id="top">
                 <video autoPlay muted loop id="bg-video">
                     <source src={img2} type="video/mp4" />
                 </video>
@@ -30,7 +85,8 @@ const Index = () => {
                         </div>
                     </div>
                 </div>
-        </div>
+        </div> */}
+
         {/* Job update */}
 
         <Job/>

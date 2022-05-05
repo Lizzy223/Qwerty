@@ -1,21 +1,37 @@
 import './assets/css/style.css';
 //import "./assets/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
+///import ReactGA from 'react-ga'
 import Index from './pages/index'
-import About from "./pages/About"
 import Jobs from "./pages/Jobs"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+import Nav from './components/Nav';
 import Contact from './pages/Contact';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
+//import RouteChangeTracker from './components/RouteChangeTracker';
+
+
 
 function App() {
+// const TRACKING_ID = "313004653"; // OUR_TRACKING_ID
+// ReactGA.initialize(TRACKING_ID);
+
+//   ReactGA.event({
+//   category: 'User',
+//   action: 'Created an Account'
+// });
+// ReactGA.exception({
+//   description: 'An error ocurred',
+//   fatal: true
+// });
   return (
     <div className="">
+      {/* <RouteChangeTracker/> */}
+      <Nav/>
       <Routes>
         <Route path="/" element={<Index/>} />
-        <Route path="/about" exact element={<About/>} />
         <Route path="/jobs" exact element={<Jobs/>} />
         <Route path="/login" exact element={<Login/>} />
         <Route path="/contact" exact element={<Contact/>} />

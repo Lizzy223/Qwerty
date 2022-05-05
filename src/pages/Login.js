@@ -12,13 +12,13 @@ import {
     useColorModeValue,
   } from '@chakra-ui/react';
   import {Link} from 'react-router-dom'
-import Nav from './../components/Nav';
+//import Nav from './../components/Nav';
 import Footer from './../components/Footer'
 
 const Login = () => {
   return (
     <div>
-        <Nav style={{background:"gray"}} />
+        {/* <Nav style={{background:"gray"}} /> */}
         <Flex
         minH={'100vh'}
         align={'center'}

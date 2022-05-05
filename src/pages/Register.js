@@ -16,14 +16,14 @@ import {
   import { useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
   import { Link } from 'react-router-dom'
-import Nav from './../components/Nav';
+//import Nav from './../components/Nav';
 import Footer from './../components/Footer'
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
   return (
     <div>
-        <Nav/>
+        {/* <Nav/> */}
         <Flex
         minH={'100vh'}
         align={'center'}
