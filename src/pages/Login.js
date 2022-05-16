@@ -8,6 +8,7 @@ import {
     Checkbox,
     Stack,
     Button,
+    Text,
     Heading,
     useColorModeValue,
   } from '@chakra-ui/react';
@@ -49,12 +50,13 @@ const Login = () => {
                   justify={'space-between'}>
                   <Checkbox>Remember me</Checkbox>
                   <Link to='/forgotPassword' color={'blue.400'}>Forgot password?</Link>
+                  <Text>Don't have an account? <Link to='/register' color='blue'>Sign Up</Link> </Text>
                 </Stack>
                 <Button
-                  bg={'blue.400'}
+                  bg={'green.400'}
                   color={'white'}
                   _hover={{
-                    bg: 'blue.500',
+                    bg: 'green.500',
                   }}>
                   Sign in
                 </Button>

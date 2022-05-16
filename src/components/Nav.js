@@ -77,7 +77,7 @@ import {
               fontSize={'sm'}
               fontWeight={400}
               variant={'link'}
-              href={'#'}>
+              href={'/login'}>
              <Link to='/login'> Sign In</Link>
             </Button>
             <Button
@@ -86,7 +86,7 @@ import {
               fontWeight={600}
               color={'white'}
               bg={'green'}
-              href={'#'}
+              href={'/register'}
               _hover={{
                 bg: 'green',
               }}>
@@ -202,7 +202,7 @@ import {
         <Flex
           py={2}
           as={Link}
-          href={href ?? '#'}
+          href={href}
           justify={'space-between'}
           align={'center'}
           _hover={{
@@ -235,7 +235,7 @@ import {
             {children &&
               children.map((child) => (
                 <Link key={child.label} py={2}>
-                  <NavLink to={child.href ?? '#'}> {child.label} </NavLink>
+                  <NavLink to={child.href}> {child.label} </NavLink>
                 </Link>
               ))}
           </Stack>
@@ -247,7 +247,10 @@ import {
  
   
   const NAV_ITEMS= [
-    
+    {
+      label: 'Home',
+      href: '/',
+    },
     {
       label: 'Job',
       href: '/jobs',

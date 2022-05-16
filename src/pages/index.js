@@ -62,9 +62,8 @@ const Index = () => {
                 _hover={{
                   bg: 'green.500',
                 }}>
-                <Link to='/login'>Get Started</Link>
+                <Link to='/register'>Get Started</Link>
               </Button>
-              <Button rounded={'full'}>How It Works</Button>
             </Stack>
           </Stack>
         </Flex>
