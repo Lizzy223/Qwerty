@@ -57,7 +57,7 @@ import {
   } 
   
 
-  const JobList = [
+  export const JobList = [
       {
           JobId:"1",
           JobTitle: 'Dish Washer',
@@ -116,7 +116,7 @@ import {
   },
     ]
 
-  export default function JobLists() {
+  export  function JobLists() {
     return (
       <Box
       
@@ -125,7 +125,7 @@ import {
       justifyContent={'center'}
       p={5} m={"2rem"}>
           <Center>
-            <Heading color={'gray.500'} p={'2.5rem'}>Job Updates</Heading>
+            <Heading color={'gray.500'} p={['1.25rem', '2.5rem']}>Job Updates</Heading>
           </Center>
           <Stack >
               <Flex flexWrap={'wrap'}>

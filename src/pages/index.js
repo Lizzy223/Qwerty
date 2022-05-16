@@ -21,6 +21,7 @@ import img1 from "../assets/images/line-dec.png"
 //import Carousel from './../components/Carousel'
 import img from '../assets/images/img3.svg'
 import { Link } from 'react-router-dom'
+import Dashboard from './Dashboard'
 
 
 const Index = () => {
@@ -45,9 +46,9 @@ const Index = () => {
                 }}>
                 Find the 
               </Text>
-              <br />{' '}
+              {/* <br />{' '} */}
               <Text color={'green'} as={'span'}>
-                Perfect Job
+              &nbsp;  Perfect Job
               </Text>{' '}
             </Heading>
             <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
@@ -109,7 +110,9 @@ const Index = () => {
             </div>
         </section>
         <Cta/>
+        <Dashboard/>
         <Footer/>
+
 
     {/* end of section */}
 

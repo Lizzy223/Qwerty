@@ -67,43 +67,16 @@ import {
                 direction={{ base: 'column', md: 'row' }}>
                 <Stack
                   align="center"
-                  justify="space-around"
+                  justify="space-around"m b        
                   direction={{ base: 'row', md: 'column' }}>
                   <Tooltip
-                    label={hasCopied ? 'Email Copied!' : 'Copy Email'}
-                    closeOnClick={false}
-                    hasArrow>
-                    <IconButton
-                      aria-label="email"
-                      variant="ghost"
-                      size="lg"
-                      fontSize="3xl"
-                      icon={<MdEmail />}
-                      _hover={{
-                        bg: 'green',
-                        color: useColorModeValue('white', 'gray.700'),
-                      }}
-                      onClick={onCopy}
-                      isRound
-                    />
+                    label={hasCopied ? 'Email Copied!' : 'Copy Email'}  closeOnClick={false} hasArrow>
+                    <IconButton aria-label="email" variant="ghost" size="lg"  fontSize="3xl" icon={<MdEmail />}
+                     _hover={{ bg: 'green', color: useColorModeValue('white', 'gray.700'), }} onClick={onCopy} isRound />
                   </Tooltip>
   
-                  <Link href="#">
-                    <IconButton
-                      aria-label="github"
-                      variant="ghost"
-                      size="lg"
-                      fontSize="3xl"
-                      icon={<BsGithub />}
-                      _hover={{
-                        bg: 'green',
-                        color: useColorModeValue('white', 'gray.700'),
-                      }}
-                      isRound
-                    />
-                  </Link>
-  
-                  <Link href="#">
+                    
+                  <Link href="https://twitter.com/QwertyInc3?s=20">
                     <IconButton
                       aria-label="twitter"
                       variant="ghost"

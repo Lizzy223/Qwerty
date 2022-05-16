@@ -1,39 +1,4 @@
-// import React from 'react'
-// import {Stack} from '@chakra-ui/react'
-// import { NavLink } from "react-router-dom"
-// const Nav = () => {
-//   return (
-//     <header className="header-area header-sticky">
-//         <div className="container">
-//             <div className="row">
-//                 <Stack>
-//                 <div className="col-12">
-//                     <nav className="main-nav">
-//                         {/* <!-- ***** Logo Start ***** --> */}
-//                         <NavLink to="index.html" className="logo">Qwerty<em> INC</em></NavLink>
-//                         {/* <!-- ***** Logo End ***** --> */}
-//                         {/* <!-- ***** Menu Start ***** --> */}
-//                         <ul className="nav">
-//                             <li><NavLink to="/" className="active">Home</NavLink></li> 
-//                             <li><NavLink to="/jobs">Jobs</NavLink></li>                           
-//                             <li><NavLink to="/contact">Contact</NavLink></li> 
-//                             <li><NavLink to="/login">Login</NavLink></li> 
-//                             <li><NavLink to="/register">Register</NavLink></li> 
-//                         </ul>        
-//                         <a href='.' className='menu-trigger'>
-//                             <span>Menu</span>
-//                         </a>
-//                         {/* <!-- ***** Menu End ***** --> */}
-//                     </nav>
-//                 </div>
-//                 </Stack>
-//             </div>
-//         </div>
-//     </header>
-//   )
-// }
 
-// export default Nav
 
 import {
     Box,
@@ -71,7 +36,7 @@ import {
           color={useColorModeValue('gray.600', 'white')}
           minH={'60px'}
           py={{ base: 2 }}
-          px={{ base: 4 }}
+          px={'1.5rem'}
           borderBottom={1}
           borderStyle={'solid'}
           borderColor={useColorModeValue('gray.200', 'gray.900')}
