@@ -109,7 +109,6 @@ const Index = () => {
             </div>
         </section>
         <Cta/>
-        <Dashboard/>
         <Footer/>
 
 
