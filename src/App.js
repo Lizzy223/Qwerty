@@ -10,6 +10,7 @@ import Nav from './components/Nav';
 import Contact from './pages/Contact';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
+import Names from './pages/Anyname'
 //import RouteChangeTracker from './components/RouteChangeTracker';
 
 
@@ -29,7 +30,7 @@ function App() {
   return (
     <div className="">
       {/* <RouteChangeTracker/> */}
-      <Nav/>
+      {/* <Nav/> */}
       <Routes>
         <Route path="/" element={<Index/>} />
         <Route path="/jobs" exact element={<Jobs/>} />
@@ -38,6 +39,7 @@ function App() {
         <Route path="/register" exact element={<Register/>} />
         <Route path="/forgotPassword" exact element={<ForgotPassword/>} />
         <Route path="/resetpassword" exact element={<ResetPassword/>} />
+        <Route path="/anyname" exact element={<Names/>} />
       </Routes>
     </div>
   );

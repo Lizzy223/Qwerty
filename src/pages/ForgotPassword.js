@@ -9,7 +9,7 @@ import {
     useColorModeValue,
   } from '@chakra-ui/react';
   //import Nav from './../components/Nav'
-  import Footer from './../components/Footer';
+  import Footer from '../components/Footer'
 
   
   export default function ForgotPassword() {

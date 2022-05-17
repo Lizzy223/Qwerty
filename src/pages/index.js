@@ -21,7 +21,6 @@ import img1 from "../assets/images/line-dec.png"
 //import Carousel from './../components/Carousel'
 import img from '../assets/images/img3.svg'
 import { Link } from 'react-router-dom'
-import Dashboard from './Dashboard'
 
 
 const Index = () => {
