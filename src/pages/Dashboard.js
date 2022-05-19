@@ -19,6 +19,7 @@ import {
 	MenuDivider,
 	MenuItem,
 	MenuList,
+	Circle,
 } from "@chakra-ui/react";
 import {
 	FiHome,
@@ -191,10 +192,15 @@ const MobileNav = ({ onOpen, ...rest }) => {
 							_focus={{ boxShadow: "none" }}
 						>
 							<HStack>
-								<Avatar size={"sm"}>
+								<Circle
+									size="3rem"
+									bgColor="green"
+									color="white"
+									textTransform="uppercase"
+								>
 									{" "}
 									{`${user.firstName.charAt(0)}${user.lastName.charAt(0)}`}
-								</Avatar>
+								</Circle>
 								<VStack
 									display={{ base: "none", md: "flex" }}
 									alignItems="flex-start"
@@ -202,9 +208,9 @@ const MobileNav = ({ onOpen, ...rest }) => {
 									ml="2"
 								>
 									<Text fontSize="sm">{`Hi ${user.firstName}`}</Text>
-									<Text fontSize="xs" color="gray.600">
+									{/* <Text fontSize="xs" color="gray.600">
 										User
-									</Text>
+									</Text> */}
 								</VStack>
 								<Box display={{ base: "none", md: "flex" }}>
 									<FiChevronDown />
