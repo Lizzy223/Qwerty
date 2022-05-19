@@ -74,10 +74,10 @@ const Jobs = () => {
 			</Stack>
 			{searchData.length !== 0 && (
 				<Box>
-					{searchData.slice(0, 3).map((job, key) => {
-						return (
-							<Stack>
-								<Flex flexWrap={"wrap"}>
+					<Stack>
+						<Flex flexWrap={"wrap"}>
+							{searchData.slice(0, 3).map((job, key) => {
+								return (
 									<JobContainer
 										key={job.JobId}
 										title={job.JobTitle}
@@ -85,10 +85,10 @@ const Jobs = () => {
 										description={job.JobDescription}
 										price={job.JobPrice}
 									/>
-								</Flex>
-							</Stack>
-						);
-					})}
+								);
+							})}
+						</Flex>
+					</Stack>
 				</Box>
 			)}
 			{/* {JobList.filter((JobTitle) => {
