@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import {
 	IconButton,
-	Avatar,
 	Box,
 	CloseButton,
 	Flex,
