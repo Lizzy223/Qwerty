@@ -23,17 +23,34 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
+import React, { useState, useEffect} from 'react'
 
   import { NavLink } from 'react-router-dom'
   
   export default function Nav() {
     const { isOpen, onToggle } = useDisclosure();
+    const [navbar, setNavbar] = useState(false);
+
+    const AddBjOnScroll = ()=>{
+      let scrollHeight = 100;
+      let pos = window.scrollY;
+      if(pos >= scrollHeight) {
+        setNavbar(true);
+      }else{
+        setNavbar(false);
+      }
+    };
+  
+
+    useEffect(() =>{
+      window.addEventListener('scroll', AddBjOnScroll);
+    }, []);
   
     return (
       <Box>
         <Flex
           bg={useColorModeValue('white', 'gray.800')}
-          color={useColorModeValue('gray.600', 'white')}
+          color={navbar ? 'white' : 'grey'}
           minH={'60px'}
           py={{ base: 2 }}
           px={'1.5rem'}

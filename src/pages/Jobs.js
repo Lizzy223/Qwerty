@@ -1,7 +1,7 @@
-import { React, useState } from "react";
+import { React} from "react";
 
 import Footer from "./../components/Footer";
-import { JobList, JobLists } from "./../components/JobList";
+import {  JobLists } from "./../components/JobList";
 import {
   Stack,
   InputGroup,
@@ -16,7 +16,7 @@ import {
 import { GoLocation, GoSearch } from "react-icons/go";
 
 const Jobs = () => {
-  const [search, setSearch] = useState("");
+  //const [search, setSearch] = useState("");
   return (
     <div>
       <Stack direction={["column", "row"]} mt={"3rem"} p={"1.5rem"}>
@@ -32,9 +32,6 @@ const Jobs = () => {
             <Input
               placeholder="state"
               color="#ccc"
-              onChange={(e) => {
-                setSearch(e.target.JobTitleue);
-              }}
             />
           </InputGroup>
         </Flex>

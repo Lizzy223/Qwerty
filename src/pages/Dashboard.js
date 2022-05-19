@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {
   IconButton,
   Avatar,
@@ -31,6 +31,8 @@ import {
   FiChevronDown,
 } from 'react-icons/fi';
 
+import {UserContext} from "../components/MainContext"
+
 
 const LinkItems= [
   { name: 'Home', icon: FiHome },
@@ -44,6 +46,7 @@ export default function Dashboard({
   children,
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  
   return (
     <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
       <SidebarContent
@@ -66,6 +69,7 @@ export default function Dashboard({
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
+        hello
       </Box>
     </Box>
   );
@@ -132,6 +136,13 @@ const NavItem = ({ icon, children, ...rest }) => {
 };
 
 const MobileNav = ({ onOpen, ...rest }) => {
+  const [user, setUser] = useContext(UserContext);
+  const logOut = (e) =>{
+    localStorage.removeItem('user');
+    setUser(null);
+    window.location.reload();
+  };
+
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -156,7 +167,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
         fontSize="2xl"
         fontFamily="monospace"
         fontWeight="bold">
-        Logo
+        Qwerty
       </Text>
 
       <HStack spacing={{ base: '0', md: '6' }}>
@@ -173,18 +184,13 @@ const MobileNav = ({ onOpen, ...rest }) => {
               transition="all 0.3s"
               _focus={{ boxShadow: 'none' }}>
               <HStack>
-                <Avatar
-                  size={'sm'}
-                  src={
-                    'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                  }
-                />
+                <Avatar size={'sm'}> {`${user.firstName.charAt(0)}${user.lastName.charAt(0)}`}</Avatar>
                 <VStack
                   display={{ base: 'none', md: 'flex' }}
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2">
-                  <Text fontSize="sm">Justina Clark</Text>
+                  <Text fontSize="sm">{`Hi ${user.firstName}`}</Text>
                   <Text fontSize="xs" color="gray.600">
                     User
                   </Text>
@@ -197,11 +203,8 @@ const MobileNav = ({ onOpen, ...rest }) => {
             <MenuList
               bg={useColorModeValue('white', 'gray.900')}
               borderColor={useColorModeValue('gray.200', 'gray.700')}>
-              <MenuItem>Profile</MenuItem>
-              <MenuItem>Settings</MenuItem>
-              <MenuItem>Billing</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem onClick={(e) => logOut(e)} >Sign out</MenuItem>
             </MenuList>
           </Menu>
         </Flex>

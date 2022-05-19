@@ -8,15 +8,50 @@ import {
     Checkbox,
     Stack,
     Button,
+    CircularProgress,
     Text,
     Heading,
     useColorModeValue,
   } from '@chakra-ui/react';
-  import {Link} from 'react-router-dom'
+  import {Link , useNavigate } from 'react-router-dom'
+  import { useContext, useState } from 'react';
+  import Api from '../Api/Api'
+  import { UserContext } from '../components/MainContext';
 //import Nav from './../components/Nav';
 import Footer from './../components/Footer'
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('')
+  const {setUser} = useContext(UserContext);
+  let navigate = useNavigate();
+
+  const logInUser = async(e)=>{
+    e.preventDefault();
+    setLoading(true);
+    const input = {
+      email:email,
+      password:password,
+    };
+    try{
+      const data = await Api ('user/token', 'POST',input);
+      console.log(data);
+      if(data.status){
+        setLoading(false);
+        localStorage.setItem('user', JSON.stringify(data.data));
+        setUser(data.data);
+        navigate('./dashboard');
+        return;
+      }
+      setLoading(false);
+      setMessage(data.Message);
+    } catch(error){
+      console.error(error);
+    }
+  }
+
   return (
     <div>
         {/* <Nav style={{background:"gray"}} /> */}
@@ -37,11 +72,11 @@ const Login = () => {
             <Stack spacing={4}>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input type="email" value={email} onChange={(e)=> setEmail(e.target.value)}/>
               </FormControl>
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
-                <Input type="password" />
+                <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
               </FormControl>
               <Stack spacing={10}>
                 <Stack
@@ -57,9 +92,10 @@ const Login = () => {
                   color={'white'}
                   _hover={{
                     bg: 'green.500',
-                  }}>
-                  Sign in
+                  }} onClick={(e)=>logInUser(e)} >
+                  {loading? <CircularProgress/>:'Sign in'}
                 </Button>
+                <Text>{message}</Text>
               </Stack>
             </Stack>
           </Box>

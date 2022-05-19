@@ -11,8 +11,9 @@ import Contact from "./pages/Contact";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Names from "./pages/Anyname";
-import Name from "./components/Name";
 //import RouteChangeTracker from './components/RouteChangeTracker';
+import {UserProvider} from './components/MainContext'
+import Dashboard from './pages/Dashboard';
 
 function App() {
 	// const TRACKING_ID = "313004653"; // OUR_TRACKING_ID
@@ -27,21 +28,24 @@ function App() {
 	//   fatal: true
 	// });
 	return (
-		<div className="">
+		<>
 			{/* <RouteChangeTracker/> */}
-			{/* <Nav /> */}
-			<Name />
-			<Routes>
-				<Route path="/" element={<Index />} />
-				<Route path="/jobs" exact element={<Jobs />} />
-				<Route path="/login" exact element={<Login />} />
-				<Route path="/contact" exact element={<Contact />} />
-				<Route path="/register" exact element={<Register />} />
-				<Route path="/forgotPassword" exact element={<ForgotPassword />} />
-				<Route path="/resetpassword" exact element={<ResetPassword />} />
-				<Route path="/anyname" exact element={<Names />} />
-			</Routes>
-		</div>
+			<UserProvider>
+				<Nav />
+				{/* <Name /> */}
+				<Routes>
+					<Route path="/" element={<Index />} />
+					<Route path="/jobs" exact element={<Jobs />} />
+					<Route path="/login" exact element={<Login />} />
+					<Route path="/contact" exact element={<Contact />} />
+					<Route path="/register" exact element={<Register />} />
+					<Route path="/forgotPassword" exact element={<ForgotPassword />} />
+					<Route path="/resetpassword" exact element={<ResetPassword />} />
+					<Route path="/anyname" exact element={<Names />} />
+					<Route path="/dashboard" exact element={<Dashboard/>} />
+				</Routes>
+			</UserProvider>
+		</>
 	);
 }
 

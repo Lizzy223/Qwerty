@@ -1,6 +1,5 @@
 import {
 	Flex,
-	VStack,
 	Box,
 	HStack,
 	Button,
