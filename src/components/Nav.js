@@ -139,7 +139,7 @@ import React, { useState, useEffect} from 'react'
                     textDecoration: 'none',
                     color: linkHoverColor,
                   }}>
-                  <NavLink to={navItem.href ?? '#'}> {navItem.label} </NavLink>
+                  <NavLink to={navItem.href}> {navItem.label} </NavLink>
                 </Link>
               </PopoverTrigger>
   
@@ -179,7 +179,7 @@ import React, { useState, useEffect} from 'react'
               transition={'all .3s ease'}
               _groupHover={{ color: 'pink.400' }}
               fontWeight={500}>
-              <NavLink to={href ?? '#'}> {label} </NavLink>
+              <NavLink to={href}> {label} </NavLink>
             </Text>
             <Text fontSize={'sm'}>{subLabel}</Text>
           </Box>
