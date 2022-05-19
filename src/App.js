@@ -12,8 +12,8 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Names from "./pages/Anyname";
 //import RouteChangeTracker from './components/RouteChangeTracker';
-import {UserProvider} from './components/MainContext'
-import Dashboard from './pages/Dashboard';
+import { UserProvider } from "./components/MainContext";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
 	// const TRACKING_ID = "313004653"; // OUR_TRACKING_ID
@@ -42,7 +42,7 @@ function App() {
 					<Route path="/forgotPassword" exact element={<ForgotPassword />} />
 					<Route path="/resetpassword" exact element={<ResetPassword />} />
 					<Route path="/anyname" exact element={<Names />} />
-					<Route path="/dashboard" exact element={<Dashboard/>} />
+					<Route path="/dashboard" exact element={<Dashboard />} />
 				</Routes>
 			</UserProvider>
 		</>
