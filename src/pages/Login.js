@@ -36,7 +36,7 @@ const Login = () => {
 			password: password,
 		};
 		try {
-			const data = await Api("user/token", "POST", input);
+			const data = await Api("users/login", "POST", input);
 			console.log(data);
 			if (data.status) {
 				setLoading(false);
@@ -111,6 +111,7 @@ const Login = () => {
 									_hover={{
 										bg: "green.500",
 									}}
+									p={2}
 									onClick={(e) => logInUser(e)}
 								>
 									{loading ? <CircularProgress /> : "Sign in"}

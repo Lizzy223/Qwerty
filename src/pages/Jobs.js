@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 
 import Footer from "./../components/Footer";
-import { JobLists, JobList, JobContainer } from "./../components/JobList";
+import {  JobList, JobContainer } from "./../components/JobList";
 import {
 	Stack,
 	InputGroup,
@@ -19,17 +19,33 @@ import { GoLocation, GoSearch } from "react-icons/go";
 const Jobs = () => {
 	const [searchData, setSearchData] = useState([]);
 	const [title, setTitle] = useState("");
+	const [price, setPrice] = useState('');
+	const [location, setLocation] = useState('');
 
 	const searchJobs = () => {
 		const searchWord = {
 			title: title,
+			price: price,
+			location: location,
 		};
 		const newSearch = JobList.filter((value) => {
 			return value.JobTitle.toLowerCase().includes(
-				searchWord.title.toLowerCase()
+				searchWord.title.toLowerCase(),
+				searchWord.price.toLowerCase(),
+				searchWord.location.toLowerCase()
 			);
 		});
 		if (searchWord.title === "") {
+			setSearchData([]);
+		} else {
+			setSearchData(newSearch);
+		}
+		if (searchWord.price === "") {
+			setSearchData([]);
+		} else {
+			setSearchData(newSearch);
+		}
+		if (searchWord.location === "") {
 			setSearchData([]);
 		} else {
 			setSearchData(newSearch);
@@ -53,13 +69,13 @@ const Jobs = () => {
 				<Flex flex={1} align={"center"} justify={"center"}>
 					<InputGroup>
 						<InputLeftElement pointerEvents="none" children={GoLocation} />
-						<Input placeholder="state" color="#ccc" />
+						<Input placeholder="state" color="#ccc" value={location} onChange={(e) => setLocation(e.target.value)} />
 					</InputGroup>
 				</Flex>
 				<Flex flex={1} align={"center"} justify={"center"}>
 					<InputGroup>
 						<InputLeftElement pointerEvents="none" children={GoSearch} />
-						<Input placeholder="Enter amount" />
+						<Input placeholder="Enter salary" color="#ccc" value={price} onChange={(e) => setPrice(e.target.value)} />
 					</InputGroup>
 					<Button
 						p={"1rem"}
@@ -91,19 +107,6 @@ const Jobs = () => {
 					</Stack>
 				</Box>
 			)}
-			{/* {JobList.filter((JobTitle) => {
-				if (search === "") {
-					return JobTitle;
-				} else if (
-					JobTitle.name.toLowerCase().includes(search.toLocaleLowerCase())
-				) {
-					return JobTitle;
-				}
-			}).map((JobTitle, key) => {
-				return <JobLists {...JobTitle.JobList} />;
-			})} */}
-
-			<JobLists />
 			<Footer />
 		</div>
 	);
