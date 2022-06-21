@@ -13,7 +13,7 @@ import {
 export const JobContainer = (props) => {
 	const { title, location, description, price } = props;
 	return (
-		<Center py={6} m={"2rem"}>
+		<Center py={3} m={"2rem"}>
 			<Box
 				maxW={"330px"}
 				w={"full"}
@@ -25,7 +25,7 @@ export const JobContainer = (props) => {
 				<Stack
 					textAlign={"center"}
 					p={6}
-					color={useColorModeValue("gray.800", "white")}
+					color={useColorModeValue("#333.800", "white")}
 					align={"center"}
 				>
 					<Text
@@ -40,14 +40,14 @@ export const JobContainer = (props) => {
 						{title}
 					</Text>
 					<Stack direction={"row"} align={"center"} justify={"center"}>
-						<Text fontSize={"3xl"} fontWeight={800}>
+						<Text fontSize={"3xl"} color={"#333.300"} fontWeight={800}>
 							{price}
 						</Text>
-						<Text color={"gray.500"}>/month</Text>
+						<Text color={"#333"}>/month</Text>
 					</Stack>
 				</Stack>
 
-				<Box bg={useColorModeValue("gray.50", "gray.900")} px={6} py={10}>
+				<Box bg={useColorModeValue("#333.50", "#333.900")} px={6} py={10}>
 					<List spacing={3}>
 						<Text>{description}</Text>
 					</List>
@@ -141,11 +141,10 @@ export function JobLists() {
 			minH={"50vh"}
 			alignItems={"center"}
 			justifyContent={"center"}
-			p={5}
 			m={"2rem"}
 		>
 			<Center>
-				<Heading color={"gray.500"} p={["1.25rem", "2.5rem"]}>
+				<Heading color={"#333"} p={["1.25rem", "2.5rem"]}>
 					Job Updates
 				</Heading>
 			</Center>

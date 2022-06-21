@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, SimpleGrid, Icon, Text, Stack, Flex } from '@chakra-ui/react';
+import { Box,  Icon, Text, Stack, Flex, Grid } from '@chakra-ui/react';
 import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc';
 
 
@@ -8,7 +8,7 @@ import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc';
   
   const Feature = ({ title, text, icon }) => {
     return (
-      <Stack>
+      <Stack w='100%' >
         <Flex
           w={16}
           h={16}
@@ -21,15 +21,15 @@ import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc';
           {icon}
         </Flex>
         <Text fontWeight={600}>{title}</Text>
-        <Text color={'gray.600'}>{text}</Text>
+        <Text color={'#333.600'}>{text}</Text>
       </Stack>
     );
   };
   
   export default function Card() {
     return (
-      <Box p={10}>
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+      <Box p={10} justifyContent='center' alignItems='center'>
+        <Grid templateColumns={['repeat(2,1fr)','repeat(2,1fr)','repeat(3,1fr)']}  justifyContent='center' alignItems='center' spacing={5} gap={5}>
           <Feature
             icon={<Icon as={FcAssistant} w={10} h={10} />}
             title={'Job updates'}
@@ -58,7 +58,7 @@ import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc';
               'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore...'
             }
           />
-        </SimpleGrid>
+        </Grid>
       </Box>
     );
   }

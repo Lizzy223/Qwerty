@@ -14,6 +14,7 @@ import Names from "./pages/Anyname";
 //import RouteChangeTracker from './components/RouteChangeTracker';
 import { UserProvider } from "./components/MainContext";
 import Dashboard from "./pages/Dashboard";
+import ParkinLot from "./pages/ParkinLot";
 
 function App() {
 	// const TRACKING_ID = "313004653"; // OUR_TRACKING_ID
@@ -31,7 +32,7 @@ function App() {
 		<>
 			{/* <RouteChangeTracker/> */}
 			<UserProvider>
-				<Nav />
+				{/* <Nav /> */}
 				{/* <Name /> */}
 				<Routes>
 					<Route path="/" element={<Index />} />
@@ -43,6 +44,7 @@ function App() {
 					<Route path="/resetpassword" exact element={<ResetPassword />} />
 					<Route path="/anyname" exact element={<Names />} />
 					<Route path="/dashboard" exact element={<Dashboard />} />
+					<Route path="/parking-lot" element={<ParkinLot />} />
 				</Routes>
 			</UserProvider>
 		</>
