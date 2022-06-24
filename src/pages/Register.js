@@ -44,7 +44,7 @@ const Register = () => {
         };
         console.log(input);
         try{
-          const data = await Api('user/register', 'POST',input);
+          const data = await Api('users/signup', 'POST',input);
           console.log(data);
           if(data.status){
             setLoading(false);

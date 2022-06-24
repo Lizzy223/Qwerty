@@ -1,118 +1,124 @@
+import { React, useState } from "react";
+
+import Footer from "./../components/Footer";
+import { JobLists, JobList, JobContainer } from "./../components/JobList";
 import {
-    Box,
-    Center,
-    Text,
-    Stack,
-    List,
-    Flex,
-    Spacer,
-    Heading,
-    Button,
-    useColorModeValue,
-  } from '@chakra-ui/react';
+	Stack,
+	InputGroup,
+	InputLeftElement,
+	Input,
+	Flex,
+	Button,
+	Box,
+} from "@chakra-ui/react";
+// import icon1 from '../assets/images/icon1.svg'
+// import icon2 from '../assets/images/icon2.svg'
+//import icon3 from '../assets/images/icon3.svg'
+import { GoLocation, GoSearch } from "react-icons/go";
 
-  const JobContainer = (props) =>{
-      const {title, location, description, price} = props;
-      return(
-    <Center py={6} m={'2rem'} >
-        <Box
-          maxW={'330px'}
-          w={'full'}
-          bg={useColorModeValue('white', 'gray.800')}
-          boxShadow={'2xl'}
-          rounded={'md'}
-          overflow={'hidden'}>
-          <Stack
-            textAlign={'center'}
-            p={6}
-            color={useColorModeValue('gray.800', 'white')}
-            align={'center'}>
-            <Text
-              fontSize={'sm'}
-              fontWeight={500}
-              bg={useColorModeValue('green.50', 'green.900')}
-              p={2}
-              px={3}
-              color={'green.500'}
-              rounded={'full'}>
-              {title}
-            </Text>
-            <Stack direction={'row'} align={'center'} justify={'center'}>              
-              <Text fontSize={'3xl'} fontWeight={800}>
-                {price}
-              </Text>
-              <Text color={'gray.500'}>/month</Text>
-            </Stack>
-          </Stack>
-  
-          <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
-            <List spacing={3}>
-              <Text>{description}</Text>              
-            </List>
-            <Text>{location}</Text>
-          </Box>
-        </Box>
-        <Spacer/>
-      </Center>
-       );
-  } 
-  
+const Jobs = () => {
+	const [searchData, setSearchData] = useState([]);
+	const [title, setTitle] = useState("");
+	const [state, setState] = useState("");
+	const [price, setPrice] = useState("");
 
-  const JobList = [
-      {
-          JobId:"1",
-          JobTitle: 'Dish Washer',
-          JobLocation: 'Alagbado',
-          JobDescription: 'Wash plates every evening ',
-          JobPrice:'N30,000'
-      },
-      {
-        JobId:"2",
-        JobTitle: 'Accountant',
-        JobLocation: 'MainLand',
-        JobDescription: 'Ensures all accounts are balances ',
-        JobPrice:'N100,000'
-    },
-    {   
-        JobId:"3",
-        JobTitle: 'HR',
-        JobLocation: 'Lekki',
-        JobDescription: 'Oversee all employers',
-        JobPrice:'N80,000'
-    },
-    {
-        JobId:"4",
-        JobTitle: 'Data Analyst',
-        JobLocation: 'Surulere',
-        JobDescription: 'Collect, analyse data from customers',
-        JobPrice:'N100,000'
-    },
-    ]
+	const searchJobs = () => {
+		const searchWord = {
+			title,
+			price,
+			state,
+		};
+		const newSearch = JobList.filter((value) => {
+			return (
+				value.JobTitle.toLowerCase().includes(searchWord.title.toLowerCase()) ||
+				value.JobLocation.toLowerCase().includes(
+					searchWord.state.toLowerCase()
+				) ||
+				value.JobPrice.toLowerCase().includes(searchWord.state.toLowerCase())
+			);
+		});
+		// setSearchData(newSearch);
 
-  export default function Job() {
-    return (
-      <Box
-      
-      minH={'50vh'}  
-      alignItems={'center'}
-      justifyContent={'center'}
-      p={5} m={"2rem"}>
-          <Center>
-            <Heading color={'gray.500'} p={'2.5rem'}>Job Updates</Heading>
-          </Center>
-          <Stack direction={['column','row']} >
-              <Flex>
-              {
-                 JobList.map(({JobId, JobTitle, JobLocation, JobDescription, JobPrice}) =>(
-                     <JobContainer key={JobId} title={JobTitle} location={JobLocation} description={JobDescription} price={JobPrice} />
-                 )
+		if (
+			searchWord.title === "" &&
+			searchWord.state === "" &&
+			searchWord.price === ""
+		) {
+			setSearchData([]);
+		} else {
+			setSearchData(newSearch);
+		}
+		console.log(searchWord);
+	};
+	return (
+		<div>
+			<Stack direction={["column", "row"]} mt={"3rem"} p={"1.5rem"}>
+				<Flex flex={1} align={"center"} justify={"center"}>
+					<InputGroup>
+						<InputLeftElement pointerEvents="none" children={GoSearch} />
+						<Input
+							color="#ccc"
+							placeholder="search"
+							value={title}
+							onChange={(e) => setTitle(e.target.value)}
+						/>
+					</InputGroup>
+				</Flex>
+				<Flex flex={1} align={"center"} justify={"center"}>
+					<InputGroup>
+						<InputLeftElement pointerEvents="none" children={GoLocation} />
+						<Input
+							placeholder="state"
+							color="#ccc"
+							value={state}
+							onChange={(e) => setState(e.target.value)}
+						/>
+					</InputGroup>
+				</Flex>
+				<Flex flex={1} align={"center"} justify={"center"}>
+					<InputGroup>
+						<InputLeftElement pointerEvents="none" children={GoSearch} />
+						<Input
+							placeholder="Enter amount"
+							value={price}
+							onChange={(e) => setPrice(e.target.value)}
+						/>
+					</InputGroup>
+					<Button
+						p={"1rem"}
+						color={"#fff"}
+						bg={"green"}
+						cursor={"pointer"}
+						onClick={() => searchJobs()}
+					>
+						Search
+					</Button>
+				</Flex>
+			</Stack>
+			{searchData.length !== 0 && (
+				<Box>
+					<Stack>
+						<Flex flexWrap={"wrap"}>
+							{searchData.slice(0, 3).map((job, key) => {
+								return (
+									<JobContainer
+										key={job.JobId}
+										title={job.JobTitle}
+										location={job.JobLocation}
+										description={job.JobDescription}
+										price={job.JobPrice}
+									/>
+								);
+							})}
+						</Flex>
+					</Stack>
+				</Box>
+			)}
 
-                 ) 
-  }
-            </Flex>
-          </Stack>
-        <Center p={'1rem'} ><Button p={'1rem'} bg={'green'} color={'white'} > View more Jobs</Button> </Center>
+			<JobLists />
+			<Footer />
+		</div>
+	);
+};
 
-      </Box>
-    );
-  }
+export default Jobs;

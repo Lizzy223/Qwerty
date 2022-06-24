@@ -9,16 +9,15 @@ import {
     Image,
     Stack,
     Text,
+    Center,
     useBreakpointValue,
   } from '@chakra-ui/react';
   
 import Card from './../components/Card'
 import Cta from './../components/Cta'
-import Job from './../components/Job'
+import Nav from './../components/Nav'
+import Job from './../components/JobSection'
 import Footer from './../components/Footer'
-//import img from '../assets/images/about-fullscreen-1-1920x700.jpg'
-import img1 from "../assets/images/line-dec.png"
-//import Carousel from './../components/Carousel'
 import img from '../assets/images/img3.svg'
 import { Link } from 'react-router-dom'
 
@@ -26,9 +25,10 @@ import { Link } from 'react-router-dom'
 const Index = () => {
   return (
     <div>
-        <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+        <Nav/>
+        <Stack minH={['50vh','5vh','100vh']} direction={{ base: 'column', md: 'row' }}>
         <Flex p={2} flex={1} align={'center'} justify={'center'}>
-          <Stack spacing={3} w={'full'} maxW={'lg'}>
+          <Stack spacing={3} w={'full'} maxW={'lg'} mt={['1rem','none','none']}>
             <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
               <Text
                 as={'span'}
@@ -45,7 +45,6 @@ const Index = () => {
                 }}>
                 Find the 
               </Text>
-              {/* <br />{' '} */}
               <Text color={'green'} as={'span'}>
               &nbsp;  Perfect Job
               </Text>{' '}
@@ -58,6 +57,11 @@ const Index = () => {
                 rounded={'full'}
                 bg={'green'}
                 color={'white'}
+                w={['50%','100%','100%']}
+                h={['50%','100%','100%']}
+                float={['left','none']}
+                padding={['.75rem','none']}
+                fontSize={['.75em','']}
                 _hover={{
                   bg: 'green.500',
                 }}>
@@ -67,28 +71,15 @@ const Index = () => {
           </Stack>
         </Flex>
         <Flex flex={1}>
-          <Image src={img} alt='' layout='full' />
+          <Center>
+            <Image src={img} alt='' w={['75%','100%','100%']} h={['75%','100%','100%']} mt={['1rem','0rem','0']} layout='full' />
+          </Center>
         </Flex>
       </Stack>
-        {/* <div className="main-banner" id="top">
-                <video autoPlay muted loop id="bg-video">
-                    <source src={img2} type="video/mp4" />
-                </video>
-
-                <div className="video-overlay header-text">
-                    <div className="caption">
-                        <h6>Fresh Graduates and Job Seekers</h6>
-                        <h2>Find the perfect <em>Job</em></h2>
-                        <div className="main-button">
-                            <Link to='/contact'>Contact Us</Link>
-                        </div>
-                    </div>
-                </div>
-        </div> */}
 
         {/* Job update */}
 
-        <Job/>
+        
 
         {/* section */}
         <section className="section" id="trainers">
@@ -97,7 +88,6 @@ const Index = () => {
                     <div className="col-lg-6 offset-lg-3">
                         <div className="section-heading">
                             <h2>What <em>We</em> Do</h2>
-                            <img src={img1} alt=""/>
                             <p>Get legitimate and latest job opportnities without futher stress.</p>
                         </div>
                     </div>
@@ -107,6 +97,7 @@ const Index = () => {
 
             </div>
         </section>
+        <Job/>
         <Cta/>
         <Footer/>
 

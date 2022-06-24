@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 
 import Footer from "./../components/Footer";
-import { JobLists, JobList, JobContainer } from "./../components/JobList";
+import {  JobList, JobContainer } from "./../components/JobList";
 import {
 	Stack,
 	InputGroup,
@@ -44,6 +44,16 @@ const Jobs = () => {
 			searchWord.state === "" &&
 			searchWord.price === ""
 		) {
+			setSearchData([]);
+		} else {
+			setSearchData(newSearch);
+		}
+		if (searchWord.price === "") {
+			setSearchData([]);
+		} else {
+			setSearchData(newSearch);
+		}
+		if (searchWord.location === "") {
 			setSearchData([]);
 		} else {
 			setSearchData(newSearch);
@@ -114,19 +124,6 @@ const Jobs = () => {
 					</Stack>
 				</Box>
 			)}
-			{/* {JobList.filter((JobTitle) => {
-				if (search === "") {
-					return JobTitle;
-				} else if (
-					JobTitle.name.toLowerCase().includes(search.toLocaleLowerCase())
-				) {
-					return JobTitle;
-				}
-			}).map((JobTitle, key) => {
-				return <JobLists {...JobTitle.JobList} />;
-			})} */}
-
-			<JobLists />
 			<Footer />
 		</div>
 	);
