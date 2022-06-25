@@ -3,12 +3,6 @@ import { Box,  Icon, Text, Stack, Flex, Grid } from '@chakra-ui/react';
 import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc';
 
 
-const details= {
-  {
-    id:1,
-  },
-};
-
   
   const Feature = ({ title, text, icon }) => {
     return (
