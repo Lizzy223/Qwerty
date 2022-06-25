@@ -1,12 +1,10 @@
 import {
 	Box,
-	Center,
 	Text,
 	Stack,
 	List,
 	Button,
 	Grid,
-	Heading,
 	useColorModeValue,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";

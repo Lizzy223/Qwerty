@@ -4,21 +4,16 @@
 import React from 'react'
 import {
     Button,
-    Flex,
     Heading,
-    Image,
     Stack,
     Box,
     Text,
-    Center,
-    useBreakpointValue,
     Grid,
   } from '@chakra-ui/react';
   
 import Card from './../components/Card'
 import Cta from './../components/Cta'
 import Job from './../components/JobSection'
-import img from '../assets/images/img3.svg'
 import { Link } from 'react-router-dom'
 
 

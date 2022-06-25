@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 
-import Footer from "./../components/Footer";
+
+import Job from './../components/JobSection'
 import {  JobList, JobContainer } from "./../components/JobList";
 import {
 	Stack,
@@ -11,9 +12,6 @@ import {
 	Button,
 	Box,
 } from "@chakra-ui/react";
-// import icon1 from '../assets/images/icon1.svg'
-// import icon2 from '../assets/images/icon2.svg'
-//import icon3 from '../assets/images/icon3.svg'
 import { GoLocation, GoSearch } from "react-icons/go";
 
 const Jobs = () => {
@@ -124,7 +122,9 @@ const Jobs = () => {
 					</Stack>
 				</Box>
 			)}
-			<Footer />
+			 <Box mt={['3rem','none']}  mb={['1rem','1rem']} h='100vh'>
+				<Job/>
+			</Box>
 		</div>
 	);
 };
