@@ -32,7 +32,7 @@ import React, { useState, useEffect} from 'react'
     const [navbar, setNavbar] = useState(false);
 
     const AddBjOnScroll = ()=>{
-      let scrollHeight = 100;
+      let scrollHeight = 10;
       let pos = window.scrollY;
       if(pos >= scrollHeight) {
         setNavbar(true);
@@ -54,9 +54,6 @@ import React, { useState, useEffect} from 'react'
           minH={'60px'}
           py={{ base: 2 }}
           px={'1.5rem'}
-          borderBottom={1}
-          borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}>
           <Flex
             flex={{ base: 1, md: 'auto' }}

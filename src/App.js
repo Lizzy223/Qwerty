@@ -32,7 +32,7 @@ function App() {
 		<>
 			{/* <RouteChangeTracker/> */}
 			<UserProvider>
-				{/* <Nav /> */}
+				<Nav />
 				{/* <Name /> */}
 				<Routes>
 					<Route path="/" element={<Index />} />
