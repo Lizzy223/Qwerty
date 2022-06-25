@@ -1,5 +1,4 @@
 import "./assets/css/style.css";
-//import "./assets/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 ///import ReactGA from 'react-ga'
 import Index from "./pages/index";
@@ -11,6 +10,7 @@ import Contact from "./pages/Contact";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Names from "./pages/Anyname";
+import Footer from './components/Footer'
 //import RouteChangeTracker from './components/RouteChangeTracker';
 import { UserProvider } from "./components/MainContext";
 import Dashboard from "./pages/Dashboard";
@@ -46,6 +46,7 @@ function App() {
 					<Route path="/dashboard" exact element={<Dashboard />} />
 					<Route path="/parking-lot" element={<ParkinLot />} />
 				</Routes>
+				<Footer/>
 			</UserProvider>
 		</>
 	);

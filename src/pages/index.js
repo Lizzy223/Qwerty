@@ -18,7 +18,6 @@ import {
 import Card from './../components/Card'
 import Cta from './../components/Cta'
 import Job from './../components/JobSection'
-import Footer from './../components/Footer'
 import img from '../assets/images/img3.svg'
 import { Link } from 'react-router-dom'
 
@@ -58,29 +57,18 @@ const Index = () => {
         
 
         {/* section */}
-{/*         
-        <section className="section" id="trainers">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-6 offset-lg-3">
-                        <div className="section-heading">
-                            <h2>What <em>We</em> Do</h2>
-                            <p>Get legitimate and latest job opportnities without futher stress.</p>
-                        </div>
-                    </div>
-                </div>
-               
-                
-
-            </div>
-        </section> */}
-        <Grid spacing={4} mt='1rem'>
+        <Grid spacing={4} mt='1rem' h='75vh'>
           <Text textTransform='capitalize' textAlign='center' color='black' fontWeight='600' fontSize={['2rem','2rem','3rem']} >One platform <br/> <br/> many <Text as='span' color='green'>solutions</Text>.</Text>
           <Card/>
         </Grid>
-        <Job/>
-        <Cta/>
-        <Footer/>
+        <Box mt={['3rem','none']}  mb={['1rem','1rem']} h='100vh'>
+          <Job/>
+        </Box>
+        <Box h='100vh'>
+          <Cta/>
+        </Box>
+        
+        
 
 
     {/* end of section */}

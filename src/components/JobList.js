@@ -4,28 +4,28 @@ import {
 	Text,
 	Stack,
 	List,
-	Flex,
-	Spacer,
+	Button,
+	Grid,
 	Heading,
 	useColorModeValue,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 export const JobContainer = (props) => {
 	const { title, location, description, price } = props;
 	return (
-		<Center py={3} m={"2rem"}>
+		
 			<Box
-				maxW={"330px"}
 				w={"full"}
 				bg={useColorModeValue("white", "gray.800")}
-				boxShadow={"2xl"}
+				boxShadow={"base"}
 				rounded={"md"}
 				overflow={"hidden"}
+
 			>
 				<Stack
 					textAlign={"center"}
 					p={6}
-					color={useColorModeValue("#333.800", "white")}
 					align={"center"}
 				>
 					<Text
@@ -40,22 +40,20 @@ export const JobContainer = (props) => {
 						{title}
 					</Text>
 					<Stack direction={"row"} align={"center"} justify={"center"}>
-						<Text fontSize={"3xl"} color={"#333.300"} fontWeight={800}>
+						<Text fontSize={['sm',"2xl"]}  fontWeight={600}>
 							{price}
 						</Text>
-						<Text color={"#333"}>/month</Text>
+						<Text color={"#000"}>/month</Text>
 					</Stack>
 				</Stack>
 
-				<Box bg={useColorModeValue("#333.50", "#333.900")} px={6} py={10}>
+				<Box bg={useColorModeValue("#333.50", "#333.900")} pb='1rem' textAlign='center'>
 					<List spacing={3}>
 						<Text>{description}</Text>
 					</List>
-					<Text>{location}</Text>
+					<Text color='000'>{location}</Text>
 				</Box>
 			</Box>
-			<Spacer />
-		</Center>
 	);
 };
 
@@ -118,37 +116,43 @@ export const JobList = [
 	},
 ];
 
-export const JobsBox = () => {
-	return (
-		<Stack>
-			<Flex flexWrap={"wrap"}>
-				{JobList.map((job) => (
-					<JobContainer
-						key={job.JobId}
-						title={job.JobTitle}
-						location={job.JobLocation}
-						description={job.JobDescription}
-						price={job.JobPrice}
-					/>
-				))}
-			</Flex>
-		</Stack>
-	);
-};
+
 export function JobLists() {
 	return (
-		<Box
-			minH={"50vh"}
-			alignItems={"center"}
-			justifyContent={"center"}
-			m={"2rem"}
-		>
-			<Center>
-				<Heading color={"#333"} p={["1.25rem", "2.5rem"]}>
-					Job Updates
-				</Heading>
-			</Center>
-			<JobsBox />
+		<Box h={"100vh"}  p={10} justifyContent='center' alignItems='center'>
+			<Text fontWeight='700' fontSize='2.5rem' mb='1rem' color='black' textAlign='center' >
+				Job Updates
+			</Text>
+			<Grid templateColumns={['repeat(2,1fr)','repeat(2,1fr)','repeat(3,1fr)']}  justifyContent='center' alignItems='center' gap={5}  >
+			{
+			JobList.map((job) => (
+				<JobContainer
+					key={job.JobId}
+					title={job.JobTitle}
+					location={job.JobLocation}
+					description={job.JobDescription}
+					price={job.JobPrice}
+				/>
+				))}
+
+			</Grid>
+			<Box w='full' justifyContent='center' align='center' m='1rem'>
+			<Button
+            rounded={'full'}
+            bg={'green'}
+            color={'white'}
+            w={['50%','50%','25%']}
+            float={['left','none']}
+            padding={['1rem','.2rem','1rem .75rem']}
+            fontSize={['.75em','']}
+            _hover={{
+              bg: 'white',
+              color:'green',
+              border: '1px solid green'
+            }}>
+            <Link to='/jobs'>Find more Jobs</Link>
+          </Button>
+			</Box>
 		</Box>
 	);
 }
