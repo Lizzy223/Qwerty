@@ -5,6 +5,8 @@ import {
 	List,
 	Button,
 	Grid,
+	Flex,
+	Spacer,
 	useColorModeValue,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
@@ -118,9 +120,17 @@ export const JobList = [
 export function JobLists() {
 	return (
 		<Box h={"100vh"}  p={10} justifyContent='center' alignItems='center'>
-			<Text fontWeight='700' fontSize='2.5rem' mb='1rem' color='black' textAlign='center' >
-				Job Updates
-			</Text>
+			<Flex mb='1.5rem' >
+				<Box>
+					<Text fontWeight='600' fontSize='1.5rem' mb='1rem' color='black'  >
+						Job Updates
+					</Text>
+				</Box>
+				<Spacer/>
+				<Box>
+					<Text><Link to='/jobs'>Explore more</Link></Text>
+				</Box>
+			</Flex>
 			<Grid templateColumns={['repeat(2,1fr)','repeat(2,1fr)','repeat(3,1fr)']}  justifyContent='center' alignItems='center' gap={5}  >
 			{
 			JobList.map((job) => (
@@ -134,23 +144,6 @@ export function JobLists() {
 				))}
 
 			</Grid>
-			<Box w='full' justifyContent='center' align='center' m='1rem'>
-			<Button
-            rounded={'full'}
-            bg={'green'}
-            color={'white'}
-            w={['50%','50%','25%']}
-            float={['left','none']}
-            padding={['1rem','.2rem','1rem .75rem']}
-            fontSize={['.75em','']}
-            _hover={{
-              bg: 'white',
-              color:'green',
-              border: '1px solid green'
-            }}>
-            <Link to='/jobs'>Find more Jobs</Link>
-          </Button>
-			</Box>
 		</Box>
 	);
 }
