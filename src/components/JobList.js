@@ -3,12 +3,12 @@ import {
 	Text,
 	Stack,
 	List,
-	Button,
 	Grid,
 	Flex,
 	Spacer,
 	useColorModeValue,
 } from "@chakra-ui/react";
+import {ArrowForwardIcon} from '@chakra-ui/icons' 
 import { Link } from "react-router-dom";
 
 export const JobContainer = (props) => {
@@ -52,6 +52,7 @@ export const JobContainer = (props) => {
 						<Text>{description}</Text>
 					</List>
 					<Text color='000'>{location}</Text>
+					<Text textAlign='right'pr='1rem'><Link to='/jobs'>Explore Jobs &nbsp; <ArrowForwardIcon/>&nbsp;&nbsp;</Link></Text>
 				</Box>
 			</Box>
 	);
@@ -119,16 +120,16 @@ export const JobList = [
 
 export function JobLists() {
 	return (
-		<Box h={"100vh"}  p={10} justifyContent='center' alignItems='center'>
-			<Flex mb='1.5rem' >
+		<Box h={"100vh"}   p={10} justifyContent='center' alignItems='center'>
+			<Flex mb='2rem' p='1rem' >
 				<Box>
-					<Text fontWeight='600' fontSize='1.5rem' mb='1rem' color='black'  >
+					<Text fontWeight='600' fontSize='1.5rem' mb='1rem'  >
 						Job Updates
 					</Text>
 				</Box>
 				<Spacer/>
 				<Box>
-					<Text><Link to='/jobs'>Explore more</Link></Text>
+					<Text><Link to='/jobs'>Explore All Jobs &nbsp; <ArrowForwardIcon/></Link></Text>
 				</Box>
 			</Flex>
 			<Grid templateColumns={['repeat(2,1fr)','repeat(2,1fr)','repeat(3,1fr)']}  justifyContent='center' alignItems='center' gap={5}  >

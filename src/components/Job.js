@@ -55,7 +55,7 @@ const Jobs = () => {
 			<Stack direction={["column", "row"]} mt={"3rem"} p={"1.5rem"}>
 				<Flex flex={1} align={"center"} justify={"center"}>
 					<InputGroup>
-						<InputLeftElement pointerEvents="none" children={GoSearch} />
+						<InputLeftElement pointerEvents="none" color='gray' children={GoSearch} />
 						<Input
 							color="#ccc"
 							placeholder="search"
@@ -66,7 +66,7 @@ const Jobs = () => {
 				</Flex>
 				<Flex flex={1} align={"center"} justify={"center"}>
 					<InputGroup>
-						<InputLeftElement pointerEvents="none" children={GoLocation} />
+						<InputLeftElement pointerEvents="none" color='gray' children={GoLocation} />
 						<Input
 							placeholder="state"
 							color="#ccc"
@@ -77,7 +77,7 @@ const Jobs = () => {
 				</Flex>
 				<Flex flex={1} align={"center"} justify={"center"}>
 					<InputGroup>
-						<InputLeftElement pointerEvents="none" children={GoSearch} />
+						<InputLeftElement color='gray' pointerEvents="none" children={GoSearch} />
 						<Input
 							placeholder="Enter amount"
 							value={price}
@@ -116,7 +116,6 @@ const Jobs = () => {
 			)}
 
 			<JobLists />
-			<Footer />
 		</div>
 	);
 };

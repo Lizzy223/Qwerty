@@ -13,6 +13,7 @@ import {
 	Box,
 } from "@chakra-ui/react";
 import { GoLocation, GoSearch } from "react-icons/go";
+import { SearchIcon } from "@chakra-ui/icons";
 
 const Jobs = () => {
 	const [searchData, setSearchData] = useState([]);
@@ -63,18 +64,17 @@ const Jobs = () => {
 			<Stack direction={["column", "row"]} mt={"3rem"} p={"1.5rem"}>
 				<Flex flex={1} align={"center"} justify={"center"}>
 					<InputGroup>
-						<InputLeftElement pointerEvents="none" children={GoSearch} />
-						<Input
-							color="#ccc"
-							placeholder="search"
-							value={title}
-							onChange={(e) => setTitle(e.target.value)}
-						/>
+							<InputLeftElement
+							pointerEvents='none' color='gray'
+							children={<SearchIcon color='gray.300' />}
+							/>
+							<Input type='text' placeholder='Search' value={title}
+								onChange={(e) => setTitle(e.target.value)}/>
 					</InputGroup>
 				</Flex>
 				<Flex flex={1} align={"center"} justify={"center"}>
 					<InputGroup>
-						<InputLeftElement pointerEvents="none" children={GoLocation} />
+						<InputLeftElement color='gray' pointerEvents="none" children={<GoLocation/>} />
 						<Input
 							placeholder="state"
 							color="#ccc"
@@ -85,7 +85,7 @@ const Jobs = () => {
 				</Flex>
 				<Flex flex={1} align={"center"} justify={"center"}>
 					<InputGroup>
-						<InputLeftElement pointerEvents="none" children={GoSearch} />
+						<InputLeftElement pointerEvents="none"  color='gray' children={<GoSearch/>} />
 						<Input
 							placeholder="Enter amount"
 							value={price}
