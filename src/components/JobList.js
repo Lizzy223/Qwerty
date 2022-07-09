@@ -5,22 +5,25 @@ import {
 	List,
 	Grid,
 	Flex,
+	Link,
 	Spacer,
 	useColorModeValue,
 } from "@chakra-ui/react";
 import {ArrowForwardIcon} from '@chakra-ui/icons' 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export const JobContainer = (props) => {
 	const { title, location, description, price } = props;
 	return (
 		
-			<Box
+			<Link
 				w={"full"}
 				bg={useColorModeValue("white", "gray.800")}
 				boxShadow={"base"}
 				rounded={"md"}
 				overflow={"hidden"}
+				display='block'
+				href='/jobs/job-id'
 
 			>
 				<Stack
@@ -33,7 +36,6 @@ export const JobContainer = (props) => {
 						fontWeight={500}
 						bg={useColorModeValue("green.50", "green.900")}
 						p={2}
-						px={3}
 						color={"green.500"}
 						rounded={"full"}
 					>
@@ -52,9 +54,8 @@ export const JobContainer = (props) => {
 						<Text>{description}</Text>
 					</List>
 					<Text color='000'>{location}</Text>
-					<Text textAlign='right'pr='1rem'><Link to='/jobs'>Explore Jobs &nbsp; <ArrowForwardIcon/>&nbsp;&nbsp;</Link></Text>
 				</Box>
-			</Box>
+			</Link>
 	);
 };
 
@@ -120,19 +121,19 @@ export const JobList = [
 
 export function JobLists() {
 	return (
-		<Box h={"100vh"}   p={10} justifyContent='center' alignItems='center'>
-			<Flex mb='2rem' p='1rem' >
+		<Box h={"100vh"}   p={[0,0,6]} justifyContent='center' alignItems='center'>
+			<Flex  p='1rem' >
 				<Box>
-					<Text fontWeight='600' fontSize='1.5rem' mb='1rem'  >
-						Job Updates
+					<Text fontWeight='600' color='gray.700' fontSize={['1rem', '1em', '2.5em']} ml={['','','1rem', '3rem']} mb='1rem'  >
+						Recommended Jobs
 					</Text>
 				</Box>
-				<Spacer/>
+				{/* <Spacer/>
 				<Box>
 					<Text><Link to='/jobs'>Explore All Jobs &nbsp; <ArrowForwardIcon/></Link></Text>
-				</Box>
+				</Box> */}
 			</Flex>
-			<Grid templateColumns={['repeat(2,1fr)','repeat(2,1fr)','repeat(3,1fr)']}  justifyContent='center' alignItems='center' gap={5}  >
+			<Grid templateColumns={['repeat(2,1fr)','repeat(2,1fr)','repeat(3,1fr)']}   justifyContent='center' alignItems='center' gap={[2,3,5]}  >
 			{
 			JobList.map((job) => (
 				<JobContainer

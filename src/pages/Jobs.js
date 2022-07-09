@@ -1,8 +1,7 @@
 import { React, useState } from "react";
 
 
-import Job from './../components/JobSection'
-import {  JobList, JobContainer } from "./../components/JobList";
+import {  JobList, JobContainer, JobLists } from "./../components/JobList";
 import {
 	Stack,
 	InputGroup,
@@ -61,9 +60,9 @@ const Jobs = () => {
 	};
 	return (
 		<div>
-			<Stack direction={["column", "row"]} mt={"3rem"} p={"1.5rem"}>
-				<Flex flex={1} align={"center"} justify={"center"}>
-					<InputGroup>
+			<Stack direction={["column", "row"]} mt={"3rem"} spacing='6' p={"1.5rem"}>
+				<Flex  >
+					<InputGroup w='auto'>
 							<InputLeftElement
 							pointerEvents='none' color='gray'
 							children={<SearchIcon color='gray.300' />}
@@ -72,8 +71,8 @@ const Jobs = () => {
 								onChange={(e) => setTitle(e.target.value)}/>
 					</InputGroup>
 				</Flex>
-				<Flex flex={1} align={"center"} justify={"center"}>
-					<InputGroup>
+				<Flex  >
+					<InputGroup w='auto'>
 						<InputLeftElement color='gray' pointerEvents="none" children={<GoLocation/>} />
 						<Input
 							placeholder="state"
@@ -83,8 +82,8 @@ const Jobs = () => {
 						/>
 					</InputGroup>
 				</Flex>
-				<Flex flex={1} align={"center"} justify={"center"}>
-					<InputGroup>
+				<Flex  >
+					<InputGroup w='auto'>
 						<InputLeftElement pointerEvents="none"  color='gray' children={<GoSearch/>} />
 						<Input
 							placeholder="Enter amount"
@@ -92,6 +91,9 @@ const Jobs = () => {
 							onChange={(e) => setPrice(e.target.value)}
 						/>
 					</InputGroup>
+				</Flex  >
+
+				<Flex>
 					<Button
 						p={"1rem"}
 						color={"#fff"}
@@ -123,7 +125,7 @@ const Jobs = () => {
 				</Box>
 			)}
 			 <Box mt={['3rem','none']}  mb={['1rem','1rem']} h='100vh'>
-				<Job/>
+				<JobLists/>
 			</Box>
 		</div>
 	);

@@ -13,7 +13,6 @@ import {
   
 import Card from './../components/Card'
 import Cta from './../components/Cta'
-import Job from './../components/JobSection'
 import { Link } from 'react-router-dom'
 
 
@@ -56,10 +55,10 @@ const Index = () => {
           <Text textTransform='capitalize' textAlign='center' color='black' fontWeight='600' fontSize={['2rem','2rem','3rem']} >One platform <br/> <br/> many <Text as='span' color='green'>solutions</Text>.</Text>
           <Card/>
         </Grid>
-        <Box mt={['3rem','none']}  mb={['1rem','1rem']} h='100vh !important'>
+        {/* <Box mt={['3rem','none']}  mb={['1rem','1rem']} h='100vh !important' overflow='hidden'>
           <Job/>
-        </Box>
-        <Box h='100vh'>
+        </Box> */}
+        <Box>
           <Cta/>
         </Box>
         

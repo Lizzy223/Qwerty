@@ -60,6 +60,7 @@ const Jobs = () => {
 							color="#ccc"
 							placeholder="search"
 							value={title}
+							border='1px solid gray'
 							onChange={(e) => setTitle(e.target.value)}
 						/>
 					</InputGroup>
@@ -81,6 +82,7 @@ const Jobs = () => {
 						<Input
 							placeholder="Enter amount"
 							value={price}
+							color="#ccc"
 							onChange={(e) => setPrice(e.target.value)}
 						/>
 					</InputGroup>

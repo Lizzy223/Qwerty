@@ -15,6 +15,7 @@ import Footer from './components/Footer'
 import { UserProvider } from "./components/MainContext";
 import Dashboard from "./pages/Dashboard";
 import ParkinLot from "./pages/ParkinLot";
+import JobId from "./pages/JobId"
 
 function App() {
 	// const TRACKING_ID = "313004653"; // OUR_TRACKING_ID
@@ -33,18 +34,18 @@ function App() {
 			{/* <RouteChangeTracker/> */}
 			<UserProvider>
 				<Nav />
-				{/* <Name /> */}
 				<Routes>
 					<Route path="/" element={<Index />} />
 					<Route path="/jobs" exact element={<Jobs />} />
 					<Route path="/login" exact element={<Login />} />
 					<Route path="/contact" exact element={<Contact />} />
 					<Route path="/register" exact element={<Register />} />
-					<Route path="/forgotPassword" exact element={<ForgotPassword />} />
-					<Route path="/resetpassword" exact element={<ResetPassword />} />
+					<Route path="/forgot-password" exact element={<ForgotPassword />} />
+					<Route path="/reset-password" exact element={<ResetPassword />} />
 					<Route path="/anyname" exact element={<Names />} />
 					<Route path="/dashboard" exact element={<Dashboard />} />
 					<Route path="/parking-lot" element={<ParkinLot />} />
+					<Route path='/jobs/job-id' element={<JobId/>}/>
 				</Routes>
 				<Footer/>
 			</UserProvider>

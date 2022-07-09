@@ -35,21 +35,22 @@ const Login = () => {
 			email: email,
 			password: password,
 		};
-		try {
-			const data = await Api("users/login", "POST", input);
-			console.log(data);
-			if (data.status) {
-				setLoading(false);
-				localStorage.setItem("user", JSON.stringify(data.data));
-				setUser(data.data);
-				navigate("/dashboard");
-				return;
-			}
-			setLoading(false);
-			setMessage(data.Message);
-		} catch (error) {
-			console.error(error);
-		}
+		// try {
+		// 	const data = await Api("users/login", "POST", input);
+		// 	console.log(data);
+		// 	if (data.status) {
+		// 		setLoading(false);
+		// 		localStorage.setItem("user", JSON.stringify(data.data));
+		// 		setUser(data.data);
+		// 		navigate("/dashboard");
+		// 		return;
+		// 	}
+		// 	setLoading(false);
+		// 	setMessage(data.Message);
+		// } catch (error) {
+		// 	console.error(error);
+		// }
+		navigate('/dashboard')
 	};
 
 	return (

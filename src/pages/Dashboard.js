@@ -33,13 +33,13 @@ import {
 
 import { UserContext } from "../components/MainContext";
 import { useNavigate } from "react-router-dom";
+import DashboardHomepage from '../components/DashboardHomepage'
 
 const LinkItems = [
 	{ name: "Home", icon: FiHome },
-	{ name: "Trending", icon: FiTrendingUp },
-	{ name: "Explore", icon: FiCompass },
-	{ name: "Favourites", icon: FiStar },
-	{ name: "Settings", icon: FiSettings },
+	{ name: "Job", icon: FiTrendingUp },
+	{ name: "Interview Tips", icon: FiCompass },
+	{ name: "CV Review", icon: FiStar },
 ];
 
 export default function Dashboard({ children }) {
@@ -68,7 +68,7 @@ export default function Dashboard({ children }) {
 			<MobileNav onOpen={onOpen} />
 			<Box ml={{ base: 0, md: 60 }} p="4">
 				{children}
-				hello
+				<DashboardHomepage/>
 			</Box>
 		</Box>
 	);
@@ -88,7 +88,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 		>
 			<Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
 				<Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-					Logo
+					Qwerty
 				</Text>
 				<CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
 			</Flex>
@@ -197,8 +197,8 @@ const MobileNav = ({ onOpen, ...rest }) => {
 									color="white"
 									textTransform="uppercase"
 								>
-									{" "}
-									{`${user.firstName.charAt(0)}${user.lastName.charAt(0)}`}
+									AB
+									{/* {`${user.firstName.charAt(0)}${user.lastName.charAt(0)}`} */}
 								</Circle>
 								<VStack
 									display={{ base: "none", md: "flex" }}
@@ -206,10 +206,10 @@ const MobileNav = ({ onOpen, ...rest }) => {
 									spacing="1px"
 									ml="2"
 								>
-									<Text fontSize="sm">{`Hi ${user.firstName}`}</Text>
-									{/* <Text fontSize="xs" color="gray.600">
-										User
-									</Text> */}
+									{/* <Text fontSize="sm">{`Hi ${user.firstName}`}</Text> */}
+									<Text fontSize="sm" color="gray.600">
+										Akinyemi
+									</Text>
 								</VStack>
 								<Box display={{ base: "none", md: "flex" }}>
 									<FiChevronDown />
