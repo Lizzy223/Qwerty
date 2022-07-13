@@ -1,60 +1,48 @@
 import {
     Box,
     Button,
-    Flex,
-    FormControl,
     FormLabel,
-    Heading,
-    IconButton,
     Input,
-    InputGroup,
-    InputLeftElement,
-    Link,
     Stack,
     Textarea,
     Text,
-    Tooltip,
-    useClipboard,
-    CircularProgress,
-    useColorModeValue,
     VStack,
   } from '@chakra-ui/react';
-  import React, {useState} from 'react';
-  import { BsLinkedin, BsPerson, BsTwitter } from 'react-icons/bs';
-  import { MdEmail, MdOutlineEmail } from 'react-icons/md';
-  import Api from '../Api/Api'
+  // import React, {useState} from 'react';
+  // import { BsLinkedin, BsPerson, BsTwitter } from 'react-icons/bs';
+  // import { MdEmail, MdOutlineEmail } from 'react-icons/md';
+  // import Api from '../Api/Api'
 
   
   export default function Cta() {
-    const { hasCopied, onCopy } = useClipboard('example@example.com');
-    const [email, setEmail] = useState("");
-	const [feedback, setFeedback] = useState("");
-  const [name, setName] = useState("");
-	const [loading, setLoading] = useState(false);
-	const [message, setMessage] = useState("");
+  //   const [email, setEmail] = useState("");
+	// const [feedback, setFeedback] = useState("");
+  // const [name, setName] = useState("");
+	// const [loading, setLoading] = useState(false);
+	// const [message, setMessage] = useState("");
 
-	const submitFeedback = async (e) => {
-		e.preventDefault();
-		setLoading(true);
-		const input = {
-      name:name,
-			email: email,
-			feedback: feedback,
-		};
-		try {
-			const data = await Api("users/feedback/add", "POST", input);
-			console.log(data);
-			if (data.status) {
-				setLoading(false);
-				setMessage(data.message);
-				return;
-			}
-			setLoading(false);
-			setMessage(data.Message);
-		} catch (error) {
-			console.error(error);
-		}
-	};
+	// const submitFeedback = async (e) => {
+	// 	e.preventDefault();
+	// 	setLoading(true);
+	// 	const input = {
+  //     name:name,
+	// 		email: email,
+	// 		feedback: feedback,
+	// 	};
+	// 	try {
+	// 		const data = await Api("users/feedback/add", "POST", input);
+	// 		console.log(data);
+	// 		if (data.status) {
+	// 			setLoading(false);
+	// 			setMessage(data.message);
+	// 			return;
+	// 		}
+	// 		setLoading(false);
+	// 		setMessage(data.Message);
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 	}
+	// };
   
     return (
       <>
