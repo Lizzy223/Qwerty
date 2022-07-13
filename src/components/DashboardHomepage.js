@@ -1,16 +1,30 @@
 import React from 'react'
-import {Box, Text,} from '@chakra-ui/react'
+import {Box, Text,Tabs, TabList, TabPanels, Tab, TabPanel} from '@chakra-ui/react'
 
 const DashboardHomepage = () => {
   return (
-    <Box >
-        <Text>Welcome AB,</Text>
-        <Box mt='1rem' display='flex' justifyContent='center' alignItems='center'>
-            <Box p='2rem' borderRadius='8px' boxShadow='md'  display='flex' justifyContent='center' alignItems='center' flexDirection='column'>
-                <Text fontWeight='500' fontSize='1.5rem'>Total no of Jobs applied:</Text>
-                <Text fontWeight='500' fontSize='1.5rem'>0</Text>
-            </Box>
-        </Box>
+    <Box w='full'>
+       
+            <Tabs isFitted  variant='unstyled'>
+                <TabList>
+                    <Tab _focus={{outline:'none', border:'none'}} _selected={{ color: 'white', bg: 'green', border:'none' }}>Jobs</Tab>
+                    <Tab _focus={{outline:'none', border:'none'}} _selected={{ color: 'white', bg: 'green', border:'none' }}>Interview Tips</Tab>
+                    <Tab _focus={{outline:'none', border:'none'}} _selected={{ color: 'white', bg: 'green' , border:'none'}}>CV Review</Tab>
+                </TabList>
+
+                <TabPanels>
+                    <TabPanel>
+                    <p>one!</p>
+                    </TabPanel>
+                    <TabPanel>
+                    <p>two!</p>
+                    </TabPanel>
+                    <TabPanel>
+                    <p>three!</p>
+                    </TabPanel>
+                </TabPanels>
+            </Tabs>
+       
     </Box>
   )
 }

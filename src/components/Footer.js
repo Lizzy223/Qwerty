@@ -42,7 +42,12 @@ import {
     return (
       <Box
         bg={useColorModeValue('gray.50', 'gray.900')}
-        color={useColorModeValue('gray.700', 'gray.200')}>
+        color={useColorModeValue('gray.700', 'gray.200')}
+        display='flex'
+        alignItems='center'
+        flexDirection={['column', 'row']}
+        mt='2rem'
+       >
         <Container
           as={Stack}
           maxW={'6xl'}

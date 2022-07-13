@@ -58,7 +58,7 @@ import {
   
     return (
       <>
-      <Box w='100%' h='75vh'  display='flex' align='center !important' justifyContent='center !important'  >
+      <Box w='100%' h='75vh'  display='flex' align='center !important' justifyContent='center !important' pb='1rem' >
                 <Stack w={['75%','50%']}  m='auto' alignItems='center' justifyContent='center' spacing={6}>
                     <Text fontWeight='700' color='#000' fontSize='2rem'>Send a Message</Text>
                     <VStack alignItems='flex-start' w='full'>
