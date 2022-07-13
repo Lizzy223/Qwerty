@@ -14,27 +14,27 @@ import {
 	useColorModeValue,
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+// import { useContext, useState } from "react";
 // import Api from "../Api/Api";
-import { UserContext } from "../components/MainContext";
+// import { UserContext } from "../components/MainContext";
 //import Nav from './../components/Nav';
 import Footer from "./../components/Footer";
 
 const Login = () => {
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const [loading, setLoading] = useState(false);
-	const [message, setMessage] = useState("");
-	const { setUser } = useContext(UserContext);
+	const [email, setEmail] = React.useState("");
+	const [password, setPassword] = React.useState("");
+	const [loading, setLoading] = React.useState(false);
+	// const [message, setMessage] = useState("");
+	// const { setUser } = useContext(UserContext);
 	let navigate = useNavigate();
 
 	const logInUser = async (e) => {
 		e.preventDefault();
 		setLoading(true);
-		const input = {
-			email: email,
-			password: password,
-		};
+		// const input = {
+		// 	email: email,
+		// 	password: password,
+		// };
 		// try {
 		// 	const data = await Api("users/login", "POST", input);
 		// 	console.log(data);
@@ -117,7 +117,7 @@ const Login = () => {
 								>
 									{loading ? <CircularProgress /> : "Sign in"}
 								</Button>
-								<Text>{message}</Text>
+								{/* <Text>{message}</Text> */}
 							</Stack>
 						</Stack>
 					</Box>
