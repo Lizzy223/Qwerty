@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, Text,Tabs, TabList, TabPanels, Tab, TabPanel} from '@chakra-ui/react'
+import {Box, Tabs, TabList, TabPanels, Tab, TabPanel} from '@chakra-ui/react'
 
 const DashboardHomepage = () => {
   return (

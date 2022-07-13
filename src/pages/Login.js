@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import Api from "../Api/Api";
+// import Api from "../Api/Api";
 import { UserContext } from "../components/MainContext";
 //import Nav from './../components/Nav';
 import Footer from "./../components/Footer";

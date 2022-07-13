@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box,  Icon, Text, Stack, Flex, Grid } from '@chakra-ui/react';
+import { Box, Text,Grid } from '@chakra-ui/react';
 
 const Details = [
   {

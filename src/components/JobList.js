@@ -6,10 +6,8 @@ import {
 	Grid,
 	Flex,
 	Link,
-	Spacer,
 	useColorModeValue,
 } from "@chakra-ui/react";
-import {ArrowForwardIcon} from '@chakra-ui/icons' 
 // import { Link } from "react-router-dom";
 
 export const JobContainer = (props) => {
