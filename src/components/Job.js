@@ -93,7 +93,7 @@ const Jobs = () => {
 						cursor={"pointer"}
 						onClick={() => searchJobs()}
 					>
-						Search
+						<GoSearch/>
 					</Button>
 				</Flex>
 			</Stack>

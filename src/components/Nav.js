@@ -31,8 +31,8 @@ import React, { useState, useEffect} from 'react'
     const { isOpen, onToggle } = useDisclosure();
     const [navbar, setNavbar] = useState(false);
 
-    const AddBjOnScroll = ()=>{
-      let scrollHeight = 10;
+    const AddBgOnScroll = ()=>{
+      let scrollHeight = 80;
       let pos = window.scrollY;
       if(pos >= scrollHeight) {
         setNavbar(true);
@@ -43,7 +43,7 @@ import React, { useState, useEffect} from 'react'
   
 
     useEffect(() =>{
-      window.addEventListener('scroll', AddBjOnScroll);
+      window.addEventListener('scroll', AddBgOnScroll);
     }, []);
   
     return (
@@ -54,6 +54,15 @@ import React, { useState, useEffect} from 'react'
           minH={'60px'}
           py={{ base: 2 }}
           px={'1.5rem'}
+          boxShadow={
+            navbar
+              ? '0 3px 7px 0 rgba(0, 0, 0, 0.18), 0 2px 8px 0 rgba(0, 0, 0, 0.15)'
+              : ''
+          }
+          transition={navbar ? '0.5s ease' : ''}
+      pos="sticky"
+      top="0"
+      zIndex={5}
           align={'center'}>
           <Flex
             flex={{ base: 1, md: 'auto' }}
