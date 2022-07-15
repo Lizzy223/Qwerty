@@ -1,9 +1,10 @@
 import React from 'react'
 import {Box, Tabs, TabList, TabPanels, Tab, TabPanel} from '@chakra-ui/react'
+import Jobs from './Dashboard/Job'
 
 const DashboardHomepage = () => {
   return (
-    <Box w='full'>
+    <Box w='full' mt='2rem'>
        
             <Tabs isFitted  variant='unstyled'>
                 <TabList>
@@ -14,7 +15,7 @@ const DashboardHomepage = () => {
 
                 <TabPanels>
                     <TabPanel>
-                    <p>one!</p>
+                      <Jobs/>
                     </TabPanel>
                     <TabPanel>
                     <p>two!</p>

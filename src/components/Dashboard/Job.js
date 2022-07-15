@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 
-import { JobList, JobContainer, JobLists } from "./../components/JobList";
+import { JobList, JobContainer, JobLists } from "./JobList";
 import {
   Stack,
   InputGroup,
@@ -140,7 +140,7 @@ const Jobs = () => {
           </Stack>
         </Box>
       )}
-      <Box mt={["1rem", "none"]} >
+      <Box mt={["3rem", "none"]} mb={["1rem", "1rem"]} h="100vh">
         <JobLists />
       </Box>
     </div>

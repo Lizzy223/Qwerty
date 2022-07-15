@@ -100,8 +100,8 @@ import React, { useState, useEffect} from 'react'
               fontSize={'sm'}
               fontWeight={400}
               variant={'link'}
-              href={'/login'}>
-             <Link to='/login'> Sign In</Link>
+              href={'login'}>
+             <Link to='login'> Sign In</Link>
             </Button>
             <Button
               display={{ base: 'none', md: 'inline-flex' }}
@@ -109,11 +109,11 @@ import React, { useState, useEffect} from 'react'
               fontWeight={600}
               color={'white'}
               bg={'green'}
-              href={'/register'}
+              href={'register'}
               _hover={{
                 bg: 'green',
               }}>
-              <Link to='/register'> Sign Up</Link>
+              <Link to='register'> Sign Up</Link>
             </Button>
           </Stack>
         </Flex>
@@ -276,10 +276,10 @@ import React, { useState, useEffect} from 'react'
     },
     {
       label: 'Job',
-      href: '/jobs',
+      href: 'jobs',
     },
     {
       label: 'Contact',
-      href: '/contact',
+      href: 'contact',
     },
   ];

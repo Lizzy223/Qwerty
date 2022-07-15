@@ -118,7 +118,6 @@ export const JobList = [
 export function JobLists() {
   return (
     <Box
-      h={"100vh"}
       w="full"
       p={[0, 0, 6]}
       justifyContent="center"

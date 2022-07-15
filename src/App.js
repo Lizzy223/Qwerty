@@ -1,4 +1,4 @@
-import "./assets/css/style.css";
+
 import { Routes, Route } from "react-router-dom";
 ///import ReactGA from 'react-ga'
 import Index from "./pages/index";
@@ -36,14 +36,14 @@ function App() {
 				<Nav />
 				<Routes>
 					<Route path="/" element={<Index />} />
-					<Route path="/jobs" exact element={<Jobs />} />
-					<Route path="/login" exact element={<Login />} />
-					<Route path="/contact" exact element={<Contact />} />
-					<Route path="/register" exact element={<Register />} />
-					<Route path="/forgot-password" exact element={<ForgotPassword />} />
-					<Route path="/reset-password" exact element={<ResetPassword />} />
-					<Route path="/anyname" exact element={<Names />} />
-					<Route path="/dashboard" exact element={<Dashboard />} />
+					<Route path="jobs" exact element={<Jobs />} />
+					<Route path="login" exact element={<Login />} />
+					<Route path="contact" exact element={<Contact />} />
+					<Route path="register" exact element={<Register />} />
+					<Route path="forgot-password" exact element={<ForgotPassword />} />
+					<Route path="reset-password" exact element={<ResetPassword />} />
+					<Route path="anyname" exact element={<Names />} />
+					<Route path="dashboard" exact element={<Dashboard />} />
 					<Route path="/parking-lot" element={<ParkinLot />} />
 					<Route path='/jobs/job-id' element={<JobId/>}/>
 				</Routes>
