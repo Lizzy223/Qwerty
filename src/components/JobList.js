@@ -21,7 +21,7 @@ export const JobContainer = (props) => {
       overflow={"hidden"}
       display="block"
 	  justify='center'
-      href="/jobs/job-id"
+      href="jobs/job-id"
     >
       <Stack textAlign={"center"} p={6} align={"center"}>
         <Text

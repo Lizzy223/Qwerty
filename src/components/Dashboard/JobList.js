@@ -21,7 +21,7 @@ import {
         overflow={"hidden"}
         display="block"
         justify='center'
-        href="/dashboard/jobs/job-id"
+        href="dashboard/jobs/job-id"
       >
         <Stack textAlign={"center"} p={6} align={"center"}>
           <Text

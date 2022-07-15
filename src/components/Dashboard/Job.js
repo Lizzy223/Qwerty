@@ -140,7 +140,7 @@ const Jobs = () => {
           </Stack>
         </Box>
       )}
-      <Box mt={["3rem", "none"]} mb={["1rem", "1rem"]} h="100vh">
+      <Box mt={["1rem", "none"]}>
         <JobLists />
       </Box>
     </div>
